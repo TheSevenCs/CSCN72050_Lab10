@@ -1,0 +1,3 @@
+/development/build/CMakeFiles/Lab10.dir
+/development/build/CMakeFiles/edit_cache.dir
+/development/build/CMakeFiles/rebuild_cache.dir

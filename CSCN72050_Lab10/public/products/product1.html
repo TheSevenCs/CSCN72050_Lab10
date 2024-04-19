@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourdough Bread</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            display: inline-block;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .product h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .product p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .quantity-form {
+            margin-bottom: 20px;
+        }
+        .quantity-form label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .quantity-form input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="product">
+        <img src="image/sourdough.jpg" alt="Sourdough Bread">
+        <h2>Sourdough Bread</h2>
+        <p>Sourdough or sourdough bread is a bread made by the fermentation of dough using wild lactobacillaceae and yeast, which gives it a sour flavour.</p>
+        
+        <!-- Quantity Form -->
+        <form class="quantity-form" id="quantity-form" action="" method="get">
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" value="1" min="1"><br>
+            <input type="button" value="Add to Cart" class="add-to-cart" onclick="AddToCartFunction()">
+        </form>
+    </div>
+    <script>
+        function AddToCartFunction() {
+            var action = "/add/";
+            var param = document.getElementById("quantity").value;
+            param += "/sour";
+            action += param;
+            document.getElementById("quantity-form").action = action;
+            document.getElementById("quantity-form").submit();
+        }
+    </script>
+</body>
+</html>
